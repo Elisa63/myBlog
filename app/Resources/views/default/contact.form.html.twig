@@ -1,0 +1,29 @@
+{# Template Twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<div class="form">
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+
+  {{ form_start(form) }}
+  {{ form_row(form.name) }}
+  {{ form_row(form.surname) }}
+  {{ form_row(form.email)}}
+ {# {{ form_row(form.text) }} #}
+
+
+</div>
+
+<button type="submit">
+  {{'submit'|trans}}
+</button>
+
+  {{form_rest(form)}}
+{{ form_end(form) }}
+
+{% endblock %}

@@ -1,0 +1,128 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Comment
+ *
+ * @ORM\Table(name="comment")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CommentRepository")
+ */
+class Comment
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nickame", type="string", length=255, unique=true)
+     */
+    private $nickame;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comment", type="text")
+     */
+    private $comment;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="commentAt", type="datetime")
+     */
+    private $commentAt;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nickame
+     *
+     * @param string $nickame
+     *
+     * @return Comment
+     */
+    public function setNickame($nickame)
+    {
+        $this->nickame = $nickame;
+
+        return $this;
+    }
+
+    /**
+     * Get nickame
+     *
+     * @return string
+     */
+    public function getNickame()
+    {
+        return $this->nickame;
+    }
+
+    /**
+     * Set comment
+     *
+     * @param string $comment
+     *
+     * @return Comment
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Get comment
+     *
+     * @return string
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * Set commentAt
+     *
+     * @param \DateTime $commentAt
+     *
+     * @return Comment
+     */
+    public function setCommentAt($commentAt)
+    {
+        $this->commentAt = $commentAt;
+
+        return $this;
+    }
+
+    /**
+     * Get commentAt
+     *
+     * @return \DateTime
+     */
+    public function getCommentAt()
+    {
+        return $this->commentAt;
+    }
+}
+

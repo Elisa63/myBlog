@@ -1,0 +1,27 @@
+.fond {
+  width: 100%;
+  height: auto;
+  background-position: center;
+}
+.nav menu {
+
+  margin-right: : 2em;
+  width: 80%;
+  margin-top: 50px;
+
+  }
+
+
+
+
+
+.entete {
+background-color: ffff ;
+width: 100%;
+height: 76px;
+position: fixed;
+top: 0;
+left: 0;
+padding:10%;
+
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+
+        <title>{% block title %}{{ 'head'| trans ({}, 'messages') }}{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href= "{{asset('assets/css/mon-style.css')}}"/>
+        <link rel="stylesheet" href="css/bootstrap.min.twig" />
+    </head>
+    <body>
+      <header>
+          <div>
+            <div class="fond">
+              <img src="{{asset('assets/images/fondblog.jpg')}}"class="img-fluid" alt="Resonsive image">
+                  <h1 style="text-align:center">Elisabeth Arvati</h1>
+                    <p>blablabla</p>
+            </div>
+            <div>
+              <nav class=" nav menu" ;>
+                <a class="nav-link" href="">Mon Blog</a>
+                <a class="nav-link" href="{{ path('homepage') }}">Homepage</a>
+                <a class="nav-link" href="{{ path('pagetest') }}">CV</a>
+                <a class="nav-link" href="{{ path('contact.form') }}">Contact</a>
+            </nav>
+          </div>
+        </div>
+
+
+
+
+</header>
+
+
+
+			</div>
+
+
+  {% block body %}
+
+  Je suis dans Accueil
+  {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

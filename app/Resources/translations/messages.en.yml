@@ -1,0 +1,11 @@
+head: 'My Blog'
+
+presentation: |
+  Magdalena Frida Carmen is born in the "Blue House" (the "Casa azul"),
+  now Frida Kahlo Museum, in the middle of a neighborhood where the petty bourgeoisie live,
+  in Coyoacán, south of Mexico City.
+  She is the third of four daughters of Matilde and Guillermo Kahlo.
+
+contact.form:
+    name: "Name"
+    text: "Text"

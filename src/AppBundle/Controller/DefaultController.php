@@ -1,0 +1,82 @@
+<?php
+namespace AppBundle\Controller;
+
+
+
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use AppBundle\Entity\Formation;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
+class DefaultController extends Controller
+{
+  /**
+  *@Route("/local", name="contact.form")
+  */
+
+public function contactAction()
+{
+  $formBuilder = $this->createFormBuilder();
+  $formBuilder
+    ->add('name', TextType::class, [
+      'required' => true,
+      'label'=> 'contact.form.name',
+    ])
+    ->add('surname', TextType::class, [
+    'required' => true,
+    'label' => 'Surname',
+  ])
+
+    -> add('email', EmailType::class, [
+      'required' => true,
+      'label' => 'email',
+    ]);
+
+
+
+    /*->add('text', TextareaType::class, [
+    'required' => true,
+    'label' => 'contact.form.text',
+  ]); */
+
+  $form = $formBuilder->getForm();
+  return $this->render('default/contact.form.html.twig', [
+  'form'=> $form->createView(),
+]);
+}
+
+  /**
+     * @Route("/{_locale}", name="homepage")
+     */
+    public function indexAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        $date = new \DateTime();
+        return $this->render('default/index.html.twig', [
+            'ma_date' => $date,
+
+            ]);
+
+    }
+    /**
+     * @Route("/{_locale}/mon-cv", name="pagetest")
+     */
+    public function cvAction()
+    {
+      $adrec = new Formation();
+      $adrec->setTitle('title');
+      $adrec->setDescription('description');
+      $adrec->setDiplomeobt("En cours");
+
+      return $this->render('default/cv.html.twig', [
+        'Formation' => [$adrec],
+      ]);
+    }
+
+
+}

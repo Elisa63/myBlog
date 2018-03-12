@@ -1,0 +1,13 @@
+{#Twig#}
+{% extends  'base.html.twig' %}
+{% trans_default_domain 'cv' %}
+
+
+
+{% block body %}
+ {% for form in Formation %}
+ <h2>{{form.title | trans }}</h2>
+ <div>{{form.description | trans }}</div>
+ <div>{{form.diplomeobt}}</div>
+ {% endfor %}
+{% endblock %}
